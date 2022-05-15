@@ -21,7 +21,11 @@ public:
     }
 
 protected:
-    Ingredient(double price_unit, size_t units);
+    Ingredient(double price_unit, size_t units)
+        : price_unit { price_unit }
+        , units { units }
+    {
+    }
 
     double price_unit;
     size_t units;

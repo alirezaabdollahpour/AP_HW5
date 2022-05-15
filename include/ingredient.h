@@ -7,10 +7,18 @@ public:
     {
         return price_unit;
     }
-    size_t get_units();
-    std::string get_name();
+    size_t get_units()
+    {
+        return units;
+    }
+    virtual std::string get_name() = 0;
 
-    double price();
+    double price()
+    {
+        size_t M {};
+        M { price_unit * units };
+        return M;
+    }
 
 protected:
     Ingredient(double price_unit, size_t units);

@@ -1,6 +1,9 @@
 #ifndef INGREDIENT_H
 #define INGREDIENT_H
 
+#include <iostream>
+#include <string>
+
 class Ingredient {
 public:
     double get_price_unit()
@@ -15,9 +18,7 @@ public:
 
     double price()
     {
-        size_t M {};
-        M { price_unit * units };
-        return M;
+        return price_unit * units;
     }
 
 protected:

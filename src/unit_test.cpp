@@ -26,12 +26,13 @@ TEST(HW5Test, TEST2)
     MilkFoam milkFoam { 1 };
     Water water { 2 };
 }
-/*
-TEST(HW5Test, TEST3) {
-    Cinnamon    cinnamon{1};
-    Sugar       sugar{2};
-    Cookie      cookie{1};
-    Water       water{2};
+
+TEST(HW5Test, TEST3)
+{
+    Cinnamon cinnamon { 1 };
+    Sugar sugar { 2 };
+    Cookie cookie { 1 };
+    Water water { 2 };
 
     Ingredient* ingredient;
     ingredient = &cinnamon;
@@ -43,7 +44,7 @@ TEST(HW5Test, TEST3) {
     ingredient = &water;
     EXPECT_EQ(ingredient->get_name(), "Water");
 }
-
+/*
 TEST(HW5Test, TEST4) {
     Cappuccino cappuccino{};
     EXPECT_EQ(cappuccino.get_name(), "Cappuccino");

@@ -4,3 +4,9 @@ std::vector<Ingredient*>& EspressoBased::get_ingredients()
 {
     return ingredients;
 }
+
+EspressoBased::EspressoBased()
+    : ingredients {}
+    , name {}
+{
+}

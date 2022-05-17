@@ -45,13 +45,14 @@ TEST(HW5Test, TEST3)
     EXPECT_EQ(ingredient->get_name(), "Water");
 }
 /*
-TEST(HW5Test, TEST4) {
-    Cappuccino cappuccino{};
+TEST(HW5Test, TEST4)
+{
+    Cappuccino cappuccino {};
     EXPECT_EQ(cappuccino.get_name(), "Cappuccino");
     auto ingredients = cappuccino.get_ingredients();
 
     EXPECT_EQ(ingredients.size(), 3);
-    for(const auto& i : ingredients)
+    for (const auto& i : ingredients)
         EXPECT_TRUE(i->get_name() == "Espresso" || i->get_name() == "Milk" || i->get_name() == "MilkFoam");
 }
 

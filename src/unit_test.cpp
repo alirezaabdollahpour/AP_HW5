@@ -44,7 +44,7 @@ TEST(HW5Test, TEST3)
     ingredient = &water;
     EXPECT_EQ(ingredient->get_name(), "Water");
 }
-/*
+
 TEST(HW5Test, TEST4)
 {
     Cappuccino cappuccino {};
@@ -56,16 +56,18 @@ TEST(HW5Test, TEST4)
         EXPECT_TRUE(i->get_name() == "Espresso" || i->get_name() == "Milk" || i->get_name() == "MilkFoam");
 }
 
-TEST(HW5Test, TEST5) {
-    Cappuccino cappuccino{};
+TEST(HW5Test, TEST5)
+{
+    Cappuccino cappuccino {};
     EXPECT_DOUBLE_EQ(cappuccino.price(), 55);
-    cappuccino.add_side_item(new Cinnamon{1});
+    cappuccino.add_side_item(new Cinnamon { 1 });
     EXPECT_DOUBLE_EQ(cappuccino.price(), 60);
 }
-
-TEST(HW5Test, TEST6) {
-    EspressoBased* esp{new Cappuccino{}};
-    reinterpret_cast<Cappuccino*>(esp)->add_side_item(new Cookie{1});
+/*
+TEST(HW5Test, TEST6)
+{
+    EspressoBased* esp { new Cappuccino {} };
+    reinterpret_cast<Cappuccino*>(esp)->add_side_item(new Cookie { 1 });
     std::vector<Ingredient*>& sides = reinterpret_cast<Cappuccino*>(esp)->get_side_items();
     EXPECT_EQ(sides.size(), 1);
     delete esp;

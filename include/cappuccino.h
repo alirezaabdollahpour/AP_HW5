@@ -7,7 +7,7 @@
 #include <string>
 #include <vector>
 
-class Cappuccino : EspressoBased {
+class Cappuccino : public EspressoBased {
 public:
     Cappuccino();
     Cappuccino(const Cappuccino& cap);

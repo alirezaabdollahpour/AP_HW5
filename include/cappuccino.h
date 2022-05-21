@@ -11,7 +11,7 @@ class Cappuccino : public EspressoBased {
 public:
     Cappuccino();
     Cappuccino(const Cappuccino& cap);
-    ~Cappuccino();
+    virtual ~Cappuccino();
     void operator=(const Cappuccino& cap);
 
     virtual std::string get_name();

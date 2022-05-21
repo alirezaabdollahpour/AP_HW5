@@ -23,6 +23,7 @@ RUN cmake .. \
     && make \
     && make install
 
+
 # build the project
 WORKDIR /usr/src/app
 COPY . .

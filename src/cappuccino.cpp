@@ -54,8 +54,6 @@ Cappuccino::Cappuccino(const Cappuccino& cap)
             side_items.push_back(new Milk { component->get_units() });
         } else if (component->get_name() == "MilkFoam") {
             side_items.push_back(new MilkFoam { component->get_units() });
-        } else if (component->get_name() == "Water") {
-            side_items.push_back(new Water { component->get_units() });
         }
     }
 };
@@ -78,12 +76,16 @@ void Cappuccino::operator=(const Cappuccino& cap)
 
         if (i->get_name() == "Cookie")
             side_items.push_back(new Cookie { i->get_units() });
+
         if (i->get_name() == "Cinnamon")
             side_items.push_back(new Cinnamon { i->get_units() });
+
         if (i->get_name() == "Sugar")
             side_items.push_back(new Sugar { i->get_units() });
+
         if (i->get_name() == "Espresso")
             side_items.push_back(new Espresso { i->get_units() });
+
         if (i->get_name() == "MilkFoam")
             side_items.push_back(new MilkFoam { i->get_units() });
 

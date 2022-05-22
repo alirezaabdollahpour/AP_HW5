@@ -1,15 +1,5 @@
 #include "mocha.h"
 
-Mocha::Mocha()
-    : side_items {}
-{
-    ingredients.push_back(new Espresso(2));
-    ingredients.push_back(new Milk(2));
-    ingredients.push_back(new MilkFoam(1));
-    ingredients.push_back(new Chocolate(1));
-    name = "Mocha";
-}
-
 std::string Mocha::get_name()
 {
     return this->name;
@@ -44,33 +34,26 @@ std::vector<Ingredient*>& Mocha::get_side_items()
 Mocha::Mocha(const Mocha& cap)
     : EspressoBased { cap }
 {
-    for (const auto& i : cap.side_items) {
-        if (i->get_name() == "Cinnamon")
-            side_items.push_back(new Cinnamon { i->get_units() });
-
-        if (i->get_name() == "Chocolate")
-            side_items.push_back(new Chocolate { i->get_units() });
-
-        if (i->get_name() == "Sugar")
-            side_items.push_back(new Sugar { i->get_units() });
-
-        if (i->get_name() == "Cookie")
-            side_items.push_back(new Cookie { i->get_units() });
-
-        if (i->get_name() == "Espresso")
-            side_items.push_back(new Espresso { i->get_units() });
-
-        if (i->get_name() == "Milk")
-            side_items.push_back(new Milk { i->get_units() });
-
-        if (i->get_name() == "MilkFoam")
-            side_items.push_back(new MilkFoam { i->get_units() });
-
-        if (i->get_name() == "Water")
-            side_items.push_back(new Water { i->get_units() });
+    for (Ingredient* component : cap.side_items) {
+        if (component->get_name() == "Cinnamon") {
+            side_items.push_back(new Cinnamon { component->get_units() });
+        } else if (component->get_name() == "Chocolate") {
+            side_items.push_back(new Chocolate { component->get_units() });
+        } else if (component->get_name() == "Sugar") {
+            side_items.push_back(new Sugar { component->get_units() });
+        } else if (component->get_name() == "Cookie") {
+            side_items.push_back(new Cookie { component->get_units() });
+        } else if (component->get_name() == "Espresso") {
+            side_items.push_back(new Espresso { component->get_units() });
+        } else if (component->get_name() == "Milk") {
+            side_items.push_back(new Milk { component->get_units() });
+        } else if (component->get_name() == "MilkFoam") {
+            side_items.push_back(new MilkFoam { component->get_units() });
+        } else if (component->get_name() == "Water") {
+            side_items.push_back(new Water { component->get_units() });
+        }
     }
-}
-
+};
 void Mocha::operator=(const Mocha& Moc)
 {
     if (this == &Moc)
@@ -98,4 +81,19 @@ void Mocha::operator=(const Mocha& Moc)
         else if (i->get_name() == "Water")
             this->add_side_item(new Water(i->get_units()));
     }
+}
+
+Mocha::Mocha()
+    : EspressoBased()
+    , side_items {}
+{
+    name = "Mocha";
+    Milk* milk { new Milk { 2 } };
+    ingredients.push_back(milk);
+    Espresso* espresso { new Espresso { 2 } };
+    ingredients.push_back(espresso);
+    MilkFoam* milkfoam { new MilkFoam { 1 } };
+    ingredients.push_back(milkfoam);
+    Chocolate* chocolate { new Chocolate { 1 } };
+    ingredients.push_back(chocolate);
 }

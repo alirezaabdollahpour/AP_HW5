@@ -120,14 +120,15 @@ TEST(HW5Test, TEST10)
     delete esp;
     EXPECT_EQ(sides.size(), 0);
 }
-/*
-TEST(HW5Test, TEST11) {
-    Cappuccino cappuccino{};
+
+TEST(HW5Test, TEST11)
+{
+    Cappuccino cappuccino {};
     cappuccino.brew();
 }
 
-TEST(HW5Test, TEST12) {
-    Mocha mocha{};
+TEST(HW5Test, TEST12)
+{
+    Mocha mocha {};
     mocha.brew();
 }
-*/

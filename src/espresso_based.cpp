@@ -129,11 +129,6 @@ void EspressoBased::brew()
         }
         std::cout << std::endl;
     }
-    // auto footer = ftxui::vbox({ ftxui::text(" Your " + this->get_name() + " is brewed ") | ftxui::borderDouble
-    //     | ftxui::color(ftxui::Color::MagentaLight) });
-    // auto footer_screen = ftxui::Screen::Create(ftxui::Dimension::Fit(footer), ftxui::Dimension::Fit(footer));
-    // ftxui::Render(footer_screen, footer);
-    // footer_screen.Print();
 
     for (int index = 0; index < 50; ++index) {
         std::string reset_position;
@@ -141,9 +136,6 @@ void EspressoBased::brew()
         std::default_random_engine red { seeder() };
         std::default_random_engine green { seeder() };
         std::default_random_engine blue { seeder() };
-
-        // std::uniform_int_distribution<int> distribution(100, 255);
-        // auto R { distribution(red) };
 
         auto x = ftxui::spinner(21, index) | ftxui::bold | ftxui::color(ftxui::Color::BlueLight);
         auto document = ftxui::vbox(std::move(x)) | ftxui::center;

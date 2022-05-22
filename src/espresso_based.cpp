@@ -130,14 +130,10 @@ void EspressoBased::brew()
         std::cout << std::endl;
     }
 
-    for (int index = 0; index < 50; ++index) {
+    for (int i { 0 }; i < 40; ++i) {
         std::string reset_position;
-        std::random_device seeder;
-        std::default_random_engine red { seeder() };
-        std::default_random_engine green { seeder() };
-        std::default_random_engine blue { seeder() };
 
-        auto x = ftxui::spinner(21, index) | ftxui::bold | ftxui::color(ftxui::Color::BlueLight);
+        auto x = ftxui::spinner(21, i) | ftxui::bold | ftxui::color(ftxui::Color::BlueLight);
         auto document = ftxui::vbox(std::move(x)) | ftxui::center;
         auto screen = ftxui::Screen::Create(ftxui::Dimension::Full(), ftxui::Dimension::Fit(document));
         Render(screen, document);
